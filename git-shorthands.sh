@@ -103,14 +103,14 @@ gu () {
     echo "User '$(git config user.name)' ($(git config user.email)) set on ${PWD}"
 }
 
-filename=$(basename "$0")
+file=$(realpath "$0")
 # @doc glist: List commands
 glist () {
     echo "Git shorthands: 🤘🤘🤘"
     grep -oh '^# @doc.\+' \
-        $filename |                     # match doc tags
-        cut -c 8- |                     # remove the '# @doc ' part
-        grep '^[^:]\+' --color=always   # color the command name
+        $file |                       # match doc tags
+        cut -c 8- |                   # remove the '# @doc ' part
+        grep '^[^:]\+' --color=always # color the command name
 }
 
 # Check if in a git directory
