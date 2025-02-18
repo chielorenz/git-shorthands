@@ -22,7 +22,7 @@ alias gpl="git fetch --all && git pull"
 alias gps="git push"
 
 # @doc gpsn: Git push a new branch and set the upstream
-alias gpsn="git push --set-upstream origin $(git branch --show-current)"
+alias gpsn='git push --set-upstream origin $(git branch --show-current)'
 
 # @doc ga: Git add
 alias ga="git add"
