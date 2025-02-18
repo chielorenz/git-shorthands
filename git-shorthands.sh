@@ -15,11 +15,14 @@ alias gf="git fetch --all"
 # @doc gd: Git diff 
 alias gd="git diff"
 
-# @doc gpull: Fetch and pull current branch
-alias gpull="git fetch --all && git pull"
+# @doc gpl: Fetch all and pull current branch
+alias gpl="git fetch --all && git pull"
 
-# @doc gpush: Git push
-alias gpush="git push"
+# @doc gps: Git push
+alias gps="git push"
+
+# @doc gpsn: Git push a new branch and set the upstream
+alias gpsn="git push --set-upstream origin &(git branch --show-current)"
 
 # @doc ga: Git add
 alias ga="git add"
