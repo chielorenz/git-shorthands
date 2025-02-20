@@ -36,8 +36,8 @@ alias gac="git commit -am"
 # @doc gm: Git merge
 alias gm="git merge"
 
-# @doc gn [branch]: Create new branch
-alias gn="git checkout -b"
+# @doc gbn [branch]: Create new branch
+alias gbn="git checkout -b"
 
 # @doc gl: Pretty log
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
