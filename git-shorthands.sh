@@ -15,8 +15,8 @@ alias gf="git fetch --all"
 # @doc gd: Git diff 
 alias gd="git diff"
 
-# @doc gpl: Fetch all and pull current branch
-alias gpl="git fetch --all && git pull"
+# @doc gpl: Fetch and pull current branch
+alias gpl="git fetch && git pull"
 
 # @doc gps: Git push
 alias gps="git push"
@@ -24,8 +24,20 @@ alias gps="git push"
 # @doc gpsn: Git push a new branch and set the upstream
 alias gpsn='git push --set-upstream origin $(git branch --show-current)'
 
-# @doc ga: Git add
+# @doc ga [pattern]: Git add
 alias ga="git add"
+
+# @doc gsl: Stash list
+alias gsl="git stash list"
+
+# @doc gsps: Stash push
+alias gsps="git stash push"
+
+# @doc gspp: Stash pop
+alias gspp="git stash pop"
+#
+# @doc gsa: Stash apply
+alias gsa="git stash apply"
 
 # @doc gc [message]: Commit
 alias gc="git commit -m"
@@ -107,8 +119,8 @@ gu () {
 }
 
 file=$(realpath "$0")
-# @doc glist: List commands
-glist () {
+# @doc gcmd: List commands
+gcmd () {
     echo "Git shorthands: 🤘🤘🤘"
     grep -oh '^# @doc.\+' \
         $file |                       # match doc tags
