@@ -94,8 +94,8 @@ ggr () {
 gdel () {
 	_has-params $@ || return
 
-	git branch -d $1
 	remote=$(git branch --list $1 --format='%(upstream:short)')
+	git branch -d $1
 	if [ $remote ]; then
 		printf "This branch is tracking the remote '$remote', do you want to also delete the remote branch? [y/n] "
 		read choice
