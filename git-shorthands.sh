@@ -26,6 +26,9 @@ alias gpsn='git push --set-upstream origin $(git branch --show-current)'
 
 # @doc ga [pattern]: Git add
 alias ga="git add"
+#
+# @doc gaa: Git add all
+alias gaa="git add ."
 
 # @doc gsl: Stash list
 alias gsl="git stash list"
@@ -43,7 +46,10 @@ alias gsa="git stash apply"
 alias gc="git commit -m"
 
 # @doc gac [message]: Git add and commit
-alias gac="git commit -am"
+alias gac="git add . && git commit -m"
+
+# @doc gca: Git commit amend
+alias gca="git commit --amend"
 
 # @doc gm: Git merge
 alias gm="git merge"
