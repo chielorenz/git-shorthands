@@ -12,7 +12,7 @@ alias gbr="git branch --remotes"
 # @doc gf: Fetch all
 alias gf="git fetch --all"
 
-# @doc gd: Git diff 
+# @doc gd: Git diff
 alias gd="git diff"
 
 # @doc gpl: Fetch and pull current branch
@@ -62,8 +62,8 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 
 # @doc gg [branch]: Checkout a local git branch by searching for it
 gg () {
-	_is-git-directory || return
-	_has-params $@ || return
+	_is_git_directory || return
+	_has_params $@ || return
 
 	# --format is to keep only branch name
 	branches=$(git branch --format='%(refname:short)')
@@ -80,8 +80,8 @@ gg () {
 
 # @doc ggr [branch]: Checkout a local or remote branch by searchig it
 ggr () {
-	_is-git-directory || return
-	_has-params $@ || return
+	_is_git_directory || return
+	_has_params $@ || return
 
 	# --format is to keep only branch name
 	# --all to get local and remote branch
@@ -92,13 +92,13 @@ ggr () {
 
 	# Ensure to checkout the local branch
 	[[ $branch == origin/* ]] && branch=$(echo $branch | cut -c 8-)
-	
+
 	git checkout $branch
 }
 
 # @doc gdel [branch]: Delete a branch
 gdel () {
-	_has-params $@ || return
+	_has_params $@ || return
 
 	remote=$(git branch --list $1 --format='%(upstream:short)')
 	git branch -d $1
@@ -113,9 +113,9 @@ gdel () {
 
 # @doc gu [name] [email]: Set user name and email
 gu () {
-	_is-git-directory || return
-	_has-params $@ || return
-	
+	_is_git_directory || return
+	_has_params $@ || return
+
     git config user.name $1
 	git config user.email $2
 
@@ -140,7 +140,7 @@ gcmd () {
 }
 
 # Check if in a git directory
-_is-git-directory () { 
+_is_git_directory () {
 	if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]; then
     	return 0
     else
@@ -150,7 +150,7 @@ _is-git-directory () {
 }
 
 # Check if the are any parameters
-_has-params () {
+_has_params () {
 	if [ -n "$1" ]; then
     	return 0
     else
