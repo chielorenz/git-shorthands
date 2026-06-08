@@ -26,21 +26,21 @@ alias gpsn='git push --set-upstream origin $(git branch --show-current)'
 
 # @doc ga [pattern]: Git add
 alias ga="git add"
-#
+
 # @doc gaa: Git add all
 alias gaa="git add ."
 
 # @doc gsl: Stash list
 alias gsl="git stash list"
 
-# @doc gsps: Stash push
-alias gsps="git stash push"
+# @doc gss: Stash save with a message
+alias gss="git stash push -m"
 
-# @doc gspp: Stash pop
-alias gspp="git stash pop"
-#
 # @doc gsa: Stash apply
 alias gsa="git stash apply"
+
+# @doc gsd: Stash delete
+alias gsd="git stash drop"
 
 # @doc gc [message]: Commit
 alias gc="git commit -m"
