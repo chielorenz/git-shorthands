@@ -122,6 +122,13 @@ gu () {
     echo "User '$(git config user.name)' ($(git config user.email)) set on ${PWD}"
 }
 
+# @doc gbl [line] [path]: Git blame line
+gbl () {
+	_has-params $@ || return
+
+	git blame -L $1,$1 $2
+}
+
 file=$(realpath "$0")
 # @doc gcmd: List commands
 gcmd () {
