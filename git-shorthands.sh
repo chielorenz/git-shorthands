@@ -124,7 +124,7 @@ gu () {
 
 # @doc gbl [line] [path]: Git blame line
 gbl () {
-	_has-params $@ || return
+	_has_params $@ || return
 
 	git blame -L $1,$1 $2
 }
